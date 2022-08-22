@@ -21,7 +21,7 @@ for i in range(len(model_list)):
         % (default_settings['config_path'])
 
 default_thresholds = {
-            'thresh_car': 0.8,
+            'thresh_car': 0.5,
             #'thresh_truck': 0.90,
             #'thresh_bus': 0.90,
             #'thresh_motorcycle': 0.90
@@ -56,7 +56,7 @@ def infer_model(img_paths, multiple=False, settings=default_settings, thresholds
                         y2 = float(bbox[3])
                         img = Image.open(frame)
                         img = img.crop((x1, y1, x2, y2))
-                        root_path = '/data/grubles/custom_cars_dataset/'
+                        root_path = '/home/sotiris/github/Custom-Dataset-Generation/images_20/'
                         car_class = frame.split('/')[-2]
                         new_path = os.path.join(root_path, 'images_cropped', car_class)
                         os.makedirs(new_path, exist_ok=True)
@@ -84,7 +84,7 @@ def infer_model(img_paths, multiple=False, settings=default_settings, thresholds
                         y2 = float(bbox[3])
                         img = Image.open(frame)
                         img = img.crop((x1, y1, x2, y2))
-                        root_path = '/data/grubles/custom_cars_dataset/calibration/'
+                        root_path = '/home/sotiris/github/Custom-Dataset-Generation/images_20/'
                         car_class = frame.split('/')[-2]
                         new_path = os.path.join(root_path, 'images_cropped', car_class)
                         os.makedirs(new_path, exist_ok=True)
