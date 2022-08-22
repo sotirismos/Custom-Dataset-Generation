@@ -89,7 +89,8 @@ def infer_model(img_paths, multiple=False, settings=default_settings, thresholds
                         new_path = os.path.join(root_path, 'images_cropped', car_class)
                         os.makedirs(new_path, exist_ok=True)
                         img_output = os.path.join(new_path, f'frame_{i}.png')
-                        img.save(img_output)
+                        img.convert('RGB').save(img_output, "PNG", optimize=True)
+                        #img.save(img_output)
         
         detections_vehicle[frame.split('/')[-1]] = frame_detections_vehicle 
     return detections_vehicle
