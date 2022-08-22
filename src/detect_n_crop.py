@@ -8,8 +8,8 @@ import os
 from PIL import Image
 
 
-model_list = ['/home/sotiris/Projects/bdd100k/checkpoints/cascade_rcnn_r50_fpn_3x_det_bdd100k.pth']
-cfg_list = ['/home/sotiris/Projects/bdd100k/bdd100k-models/det/configs/det/cascade_rcnn_r50_fpn_3x_det_bdd100k.py']
+model_list = ['/home/sotiris/Projects/mmdetection/checkpoints/bdd100k/cascade_rcnn_r50_fpn_1x_det_bdd100k.pth']
+cfg_list = ['/home/sotiris/Projects/mmdetection/configs/bdd100k/cascade_rcnn_r50_fpn_1x_det_bdd100k.py']
 
 default_settings = {"model_path": os.path.abspath(model_list[0]),
                      "config_path": os.path.abspath(cfg_list[0]),
